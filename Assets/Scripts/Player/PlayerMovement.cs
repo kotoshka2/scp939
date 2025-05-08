@@ -1,10 +1,14 @@
+using System;
+using Game;
 using UnityEngine;
 
 namespace Player
 {
     public class PlayerMovement : MonoBehaviour
     {
-            [Header("Movement")]
+        
+        
+        [Header("Movement")]
         public float speed = 6f;
         public float jumpHeight = 1.5f;
         public float gravity = -9.81f;
@@ -34,6 +38,7 @@ namespace Player
         {
             controller = GetComponent<CharacterController>();
             Cursor.lockState = CursorLockMode.Locked;
+            
         }
 
         void Update()
@@ -77,17 +82,55 @@ namespace Player
                 velocity.y = 0f;
             }
 
-            Vector3 move = transform.right * moveInput.x + transform.forward * moveInput.y;
-            controller.Move(move * speed * Time.fixedDeltaTime);
+            MoveCharacter();
 
             if (jumpRequested && isGrounded)
             {
                 velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+                MakeSound(SoundType.Loud, transform.position);
             }
             jumpRequested = false;
 
             velocity.y += gravity * Time.fixedDeltaTime;
             controller.Move(velocity * Time.fixedDeltaTime);
+        }
+
+        private void MoveCharacter()
+        {   
+            Vector3 move = transform.right * moveInput.x + transform.forward * moveInput.y;
+            if (Input.GetKey(KeyCode.LeftControl))
+            {
+                if (move != Vector3.zero)
+                {
+                    MakeSound(SoundType.Quiet, transform.position);
+                }
+                controller.Move(move * speed /2 * Time.fixedDeltaTime);
+            }
+            else
+            {
+                if (Input.GetKey(KeyCode.LeftShift))
+                {
+                    if (move != Vector3.zero)
+                    {
+                        MakeSound(SoundType.Loud, transform.position);
+                    }
+                    controller.Move(move * speed * 1.5f * Time.fixedDeltaTime);
+                }
+                else
+                {
+                    if (move != Vector3.zero)
+                    {
+                        MakeSound(SoundType.Normal, transform.position);
+                    }
+                    controller.Move(move * speed * Time.fixedDeltaTime);
+                }
+            }
+            
+        }
+
+        void MakeSound(SoundType type, Vector3 position)
+        {
+            GameManager.SendPlayerMadeSound(type,position);
         }
     }
 }

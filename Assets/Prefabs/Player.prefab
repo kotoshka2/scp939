@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 59112200761296522}
   - component: {fileID: 206483496905019768}
   - component: {fileID: 7877366639816408207}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: DialogText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 3202432316640391617}
   - component: {fileID: 3202432316640391616}
   - component: {fileID: 2200937233341278058}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: HUD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -259,7 +259,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3202432317118900083}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -293,7 +293,7 @@ GameObject:
   - component: {fileID: 3202432317364514459}
   - component: {fileID: 3202432317364514458}
   - component: {fileID: 3202432317364514457}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -413,7 +413,7 @@ GameObject:
   - component: {fileID: 3202432317446635560}
   - component: {fileID: 3202432317446635557}
   - component: {fileID: 3202432317446635556}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -553,7 +553,7 @@ GameObject:
   - component: {fileID: 3202432317584984798}
   - component: {fileID: 3202432317584984796}
   - component: {fileID: 3202432317584984799}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: InteractText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -687,7 +687,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3202432318263828155}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: CameraHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
